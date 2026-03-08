@@ -1,0 +1,44 @@
+[
+  {
+    "id": "html_form_1",
+    "question": "What is the primary purpose of HTML forms?",
+    "choices": [
+      "To display data",
+      "To collect user input",
+      "To create layouts",
+      "To add animations"
+    ],
+    "correct_answer": 1,
+    "explanation": "HTML forms are used to collect user input.",
+    "difficulty": "easy",
+    "topic": "HTML Forms"
+  },
+  {
+    "id": "html_form_2",
+    "question": "What elements can be found in HTML forms?",
+    "choices": [
+      "Headers and footers",
+      "Input fields, buttons, checkboxes and radio buttons",
+      "Tables and lists",
+      "Images and videos"
+    ],
+    "correct_answer": 1,
+    "explanation": "HTML forms contain elements like input fields, buttons, checkboxes and radio buttons.",
+    "difficulty": "easy",
+    "topic": "HTML Forms"
+  },
+  {
+    "id": "html_form_3",
+    "question": "What type of input can be collected using HTML forms?",
+    "choices": [
+      "Only text input",
+      "Only numerical input",
+      "Various types of input",
+      "No input at all"
+    ],
+    "correct_answer": 2,
+    "explanation": "HTML forms can collect various types of input, such as text, numbers, and more.",
+    "difficulty": "medium",
+    "topic": "HTML Forms"
+  }
+]
