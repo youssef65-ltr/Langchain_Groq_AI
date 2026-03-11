@@ -5,6 +5,10 @@ from langchain.tools import tool
 import json
 from dotenv import load_dotenv
 
+# get text from PDF :
+from read_images_pdf import get_text_from_pdf 
+
+
 load_dotenv()
 
         
@@ -26,7 +30,7 @@ Generate {num_quizs} Quizs as a list of dictionaries like this form below :
 [{{
     "id": "unique id",
     "question": "...",
-    "choices":four answers ["choise1", "choise2", "choise3", "choise4"],
+    "choices":four answers like this [{{ "num": question index, "context": "..." }}, ...],
     "correct_answer": index of the correct choices,
     "explanation": "short explanation",
     "difficulty": "easy | medium | hard",
@@ -87,13 +91,14 @@ def generate_quizzes( context : str , num_quizs : int ) :
 
 
 
-text = """
-HTTP methods, also known as HTTP verbs, define the desired action to be performed on a specific resource identified by a URL. The most commonly used methods in web development, especially for RESTful APIs (Representational State Transfer APIs), are GET, POST, PUT, PATCH, and DELETE, which correspond to the basic CRUD operations (Create, Read, Update, Delete).
-"""
-    # the result :
+text = get_text_from_pdf()
+if text == None :
+    exit()
+# the result :
 quizzes = generate_quizzes.invoke({
         "context": text,
-        "num_quizs": 1
+        "num_quizs": 4
     })
-print(quizzes)
+
+if quizzes is not None : print("the AI generate quizzes Successfully")
 
