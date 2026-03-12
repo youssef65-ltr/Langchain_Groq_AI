@@ -28,7 +28,7 @@ Text :
 Return ONLY a valid JSON array.
 Generate {num_quizs} Quizs as a list of dictionaries like this form below :
 [{{
-    "id": "unique id",
+    "quiz_id": "unique id",
     "question": "...",
     "choices":four answers like this [{{ "num": question index, "context": "..." }}, ...],
     "correct_answer": index of the correct choices,
@@ -39,7 +39,7 @@ Generate {num_quizs} Quizs as a list of dictionaries like this form below :
 
 Rules:
 - Always generate 4 choices
-- correct_answer must be the index (0-3)
+- correct_answer must be the index (1-4)
 - Do not add text outside JSON
 - JSON must be valid
 
@@ -93,6 +93,7 @@ def generate_quizzes( context : str , num_quizs : int ) :
 
 text = get_text_from_pdf()
 if text == None :
+    print("text is not defined in main.py")
     exit()
 # the result :
 quizzes = generate_quizzes.invoke({

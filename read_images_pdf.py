@@ -2,9 +2,12 @@ import fitz  # PyMuPDF
 import PIL.Image
 import io
 
+
+
+PDF_FILE = None
 # read the PDF file :
 try :
-    PDF_FILE = fitz.open("Présentations mark zuckerberg.pdf")
+    PDF_FILE = fitz.open(f"uploads/Presentations_mark_zuckerberg.pdf")
 except : 
     print("error in PDF")
 
@@ -29,3 +32,5 @@ def get_images_from_pdf() :
             ext = base_img["ext"]
             img = PIL.Image.open(io.BytesIO(img_data))
             img.save(open(f"image{i}.{ext}" , "wb"))
+
+
