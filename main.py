@@ -6,7 +6,6 @@ import json
 from dotenv import load_dotenv
 
 # get text from PDF :
-from read_images_pdf import get_text_from_pdf 
 
 
 load_dotenv()
@@ -87,19 +86,4 @@ def generate_quizzes( context : str , num_quizs : int ) :
 # print(response)
 #  ==========================================================================================================================
 
-
-
-
-
-text = get_text_from_pdf()
-if text == None :
-    print("text is not defined in main.py")
-    exit()
-# the result :
-quizzes = generate_quizzes.invoke({
-        "context": text,
-        "num_quizs": 4
-    })
-
-if quizzes is not None : print("the AI generate quizzes Successfully")
 

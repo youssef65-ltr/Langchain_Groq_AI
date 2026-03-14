@@ -3,15 +3,15 @@ import PIL.Image
 import io
 
 
-
 PDF_FILE = None
 # read the PDF file :
-try :
-    PDF_FILE = fitz.open(f"uploads/Presentations_mark_zuckerberg.pdf")
-except : 
-    print("error in PDF")
 
-def get_text_from_pdf() :
+def get_text_from_pdf(filename) :
+    try :
+        PDF_FILE = fitz.open(f"uploads/{filename}")
+    except : 
+        print("error in PDF")
+        return
     full_content = ""
     if PDF_FILE is None :
         print("pdf is empty")
