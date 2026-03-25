@@ -25,7 +25,7 @@ you are an smart AI assistant the user generate Quizs from the text below as a J
 Text : 
 {context}
 Return ONLY a valid JSON array.
-Generate {num_quizs} Quizs as a list of dictionaries like this form below :
+Generate {num_quizs} Quizs in progress from easy to hard as a list of dictionaries like this form below :
 [{{
     "quiz_id": "unique id",
     "question": "...",
@@ -69,21 +69,5 @@ def generate_quizzes( context : str , num_quizs : int ) :
             "error": "AI returned invalid JSON",
             "raw_output": response
         }
-
-
-#  ==========================================================================================================================
-# # Define a prompt template
-# prompt = ChatPromptTemplate.from_messages([
-#     ("system", "You are a helpful assistant. Be concise."),
-#     ("human", "{input}")
-# ])
-
-# # Create a chain using LCEL syntax
-# chain = prompt | LLM | StrOutputParser()
-
-# # Invoke the chain with an input
-# response = chain.invoke({"input": "Explain the benefit of combining LangChain and Groq."})
-# print(response)
-#  ==========================================================================================================================
 
 
